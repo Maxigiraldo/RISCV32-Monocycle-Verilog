@@ -1,0 +1,13 @@
+module Riscv_CPU (
+	input clk,
+	input rst
+);
+
+wire [31:0] inst;
+
+PC Program_counter (
+	.pc_in,
+	.clk(clk),
+	.rst(rst),
+	.pc_out
+);

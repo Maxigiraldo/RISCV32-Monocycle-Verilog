@@ -1,0 +1,1426 @@
+Analysis & Synthesis report for PC
+Fri Oct 17 16:25:47 2025
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: mux2to1:ALU_SRC_MUX
+ 12. Port Connectivity Checks: "ALU_Module:ALU_UNIT"
+ 13. Port Connectivity Checks: "Control_Unit:CONTROL"
+ 14. Port Connectivity Checks: "Program_Counter:PC"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Oct 17 16:25:47 2025           ;
+; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                   ; PC                                              ;
+; Top-level Entity Name           ; Riscv_CPU                                       ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 19                                              ;
+; Total pins                      ; 37                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; Riscv_CPU          ; PC                 ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 14          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-14        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
++----------------------------------+-----------------+---------------------------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                   ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+---------------------------------------------+-------------------------------------------------------------------------------------+---------+
+; ALU_Module.sv                    ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Module.sv         ;         ;
+; Program_Counter.sv               ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Program_Counter.sv    ;         ;
+; Register_Unit.sv                 ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Register_Unit.sv      ;         ;
+; Instruction_Memory.sv            ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv ;         ;
+; Imm_generator.sv                 ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Imm_generator.sv      ;         ;
+; Riscv_CPU.sv                     ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv          ;         ;
+; hex7seg.sv                       ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/hex7seg.sv            ;         ;
+; Control_Unit.sv                  ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Control_Unit.sv       ;         ;
+; mux2to1.sv                       ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/mux2to1.sv            ;         ;
+; ALU_Control.sv                   ; yes             ; User SystemVerilog HDL File                 ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Control.sv        ;         ;
+; instructions.hex                 ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/instructions.hex      ;         ;
++----------------------------------+-----------------+---------------------------------------------+-------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 27        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 53        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 0         ;
+;     -- 5 input functions                    ; 0         ;
+;     -- 4 input functions                    ; 28        ;
+;     -- <=3 input functions                  ; 25        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 19        ;
+;                                             ;           ;
+; I/O pins                                    ; 37        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 19        ;
+; Total fan-out                               ; 277       ;
+; Average fan-out                             ; 1.90      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                     ;
++-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+---------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name   ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+---------------+--------------+
+; |Riscv_CPU                  ; 53 (0)              ; 19 (0)                    ; 0                 ; 0          ; 37   ; 0            ; |Riscv_CPU                        ; Riscv_CPU     ; work         ;
+;    |ALU_Module:ALU_UNIT|    ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Riscv_CPU|ALU_Module:ALU_UNIT    ; ALU_Module    ; work         ;
+;    |Register_Unit:REG_FILE| ; 0 (0)               ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |Riscv_CPU|Register_Unit:REG_FILE ; Register_Unit ; work         ;
+;    |hex7seg:result0|        ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Riscv_CPU|hex7seg:result0        ; hex7seg       ; work         ;
+;    |hex7seg:result1|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Riscv_CPU|hex7seg:result1        ; hex7seg       ; work         ;
+;    |hex7seg:result2|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Riscv_CPU|hex7seg:result2        ; hex7seg       ; work         ;
+;    |hex7seg:result3|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Riscv_CPU|hex7seg:result3        ; hex7seg       ; work         ;
+;    |hex7seg:result4|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Riscv_CPU|hex7seg:result4        ; hex7seg       ; work         ;
++-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++------------------------------------------+----------------------------------------+
+; Register name                            ; Reason for Removal                     ;
++------------------------------------------+----------------------------------------+
+; Program_Counter:PC|pc_out[2..11]         ; Stuck at GND due to stuck port data_in ;
+; Register_Unit:REG_FILE|registers~0       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~2       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~3       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~4       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~5       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~6       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~7       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~8       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~9       ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~10      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~11      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~12      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~13      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~14      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~15      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~16      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~17      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~18      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~19      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~20      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~21      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~22      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~23      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~24      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~25      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~26      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~27      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~28      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~29      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~30      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~31      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~64      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~65      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~66      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~67      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~68      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~69      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~70      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~71      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~72      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~73      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~74      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~75      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~76      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~77      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~78      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~79      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~80      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~81      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~82      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~83      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~84      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~85      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~86      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~87      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~88      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~89      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~90      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~91      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~92      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~93      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~94      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~95      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~96      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~97      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~98      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~99      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~100     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~101     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~102     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~103     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~104     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~105     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~106     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~107     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~108     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~109     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~110     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~111     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~112     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~113     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~114     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~115     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~116     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~117     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~118     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~119     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~120     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~121     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~122     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~123     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~124     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~125     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~126     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~127     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~128     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~129     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~130     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~131     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~132     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~133     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~134     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~135     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~136     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~137     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~138     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~139     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~140     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~141     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~142     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~143     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~144     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~145     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~146     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~147     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~148     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~149     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~150     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~151     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~152     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~153     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~154     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~155     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~156     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~157     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~158     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~159     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~160     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~161     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~162     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~163     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~164     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~165     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~166     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~167     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~168     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~169     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~170     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~171     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~172     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~173     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~174     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~175     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~176     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~177     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~178     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~179     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~180     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~181     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~182     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~183     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~184     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~185     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~186     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~187     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~188     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~189     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~190     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~191     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~192     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~193     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~194     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~195     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~196     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~197     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~198     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~199     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~200     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~201     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~202     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~203     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~204     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~205     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~206     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~207     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~208     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~209     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~210     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~211     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~212     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~213     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~214     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~215     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~216     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~217     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~218     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~219     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~220     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~221     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~222     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~223     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~224     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~225     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~226     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~227     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~228     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~229     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~230     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~231     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~232     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~233     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~234     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~235     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~236     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~237     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~238     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~239     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~240     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~241     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~242     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~243     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~244     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~245     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~246     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~247     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~248     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~249     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~250     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~251     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~252     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~253     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~254     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~255     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~256     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~257     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~258     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~259     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~260     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~261     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~262     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~263     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~264     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~265     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~266     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~267     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~268     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~269     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~270     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~271     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~272     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~273     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~274     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~275     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~276     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~277     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~278     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~279     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~280     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~281     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~282     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~283     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~284     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~285     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~286     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~287     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~288     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~289     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~290     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~291     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~292     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~293     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~294     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~295     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~296     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~297     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~298     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~299     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~300     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~301     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~302     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~303     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~304     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~305     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~306     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~307     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~308     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~309     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~310     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~311     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~312     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~313     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~314     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~315     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~316     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~317     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~318     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~319     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~320     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~321     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~322     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~323     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~324     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~325     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~326     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~327     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~328     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~329     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~330     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~331     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~332     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~333     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~334     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~335     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~336     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~337     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~338     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~339     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~340     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~341     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~342     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~343     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~344     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~345     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~346     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~347     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~348     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~349     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~350     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~351     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~352     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~353     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~354     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~355     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~356     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~357     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~358     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~359     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~360     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~361     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~362     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~363     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~364     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~365     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~366     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~367     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~368     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~369     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~370     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~371     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~372     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~373     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~374     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~375     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~376     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~377     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~378     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~379     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~380     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~381     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~382     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~383     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~384     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~385     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~386     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~387     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~388     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~389     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~390     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~391     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~392     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~393     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~394     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~395     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~396     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~397     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~398     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~399     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~400     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~401     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~402     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~403     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~404     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~405     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~406     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~407     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~408     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~409     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~410     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~411     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~412     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~413     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~414     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~415     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~416     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~417     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~418     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~419     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~420     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~421     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~422     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~423     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~424     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~425     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~426     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~427     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~428     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~429     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~430     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~431     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~432     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~433     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~434     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~435     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~436     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~437     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~438     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~439     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~440     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~441     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~442     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~443     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~444     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~445     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~446     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~447     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~448     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~449     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~450     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~451     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~452     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~453     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~454     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~455     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~456     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~457     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~458     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~459     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~460     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~461     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~462     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~463     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~464     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~465     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~466     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~467     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~468     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~469     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~470     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~471     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~472     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~473     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~474     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~475     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~476     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~477     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~478     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~479     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~480     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~481     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~482     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~483     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~484     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~485     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~486     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~487     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~488     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~489     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~490     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~491     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~492     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~493     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~494     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~495     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~496     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~497     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~498     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~499     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~500     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~501     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~502     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~503     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~504     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~505     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~506     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~507     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~508     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~509     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~510     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~511     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~512     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~513     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~514     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~515     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~516     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~517     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~518     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~519     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~520     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~521     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~522     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~523     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~524     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~525     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~526     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~527     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~528     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~529     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~530     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~531     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~532     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~533     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~534     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~535     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~536     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~537     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~538     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~539     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~540     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~541     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~542     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~543     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~544     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~545     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~546     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~547     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~548     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~549     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~550     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~551     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~552     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~553     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~554     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~555     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~556     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~557     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~558     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~559     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~560     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~561     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~562     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~563     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~564     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~565     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~566     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~567     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~568     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~569     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~570     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~571     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~572     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~573     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~574     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~575     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~576     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~577     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~578     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~579     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~580     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~581     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~582     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~583     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~584     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~585     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~586     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~587     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~588     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~589     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~590     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~591     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~592     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~593     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~594     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~595     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~596     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~597     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~598     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~599     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~600     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~601     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~602     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~603     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~604     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~605     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~606     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~607     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~608     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~609     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~610     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~611     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~612     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~613     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~614     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~615     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~616     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~617     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~618     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~619     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~620     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~621     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~622     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~623     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~624     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~625     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~626     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~627     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~628     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~629     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~630     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~631     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~632     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~633     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~634     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~635     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~636     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~637     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~638     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~639     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~640     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~641     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~642     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~643     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~644     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~645     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~646     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~647     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~648     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~649     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~650     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~651     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~652     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~653     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~654     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~655     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~656     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~657     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~658     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~659     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~660     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~661     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~662     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~663     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~664     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~665     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~666     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~667     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~668     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~669     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~670     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~671     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~672     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~673     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~674     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~675     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~676     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~677     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~678     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~679     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~680     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~681     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~682     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~683     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~684     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~685     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~686     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~687     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~688     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~689     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~690     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~691     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~692     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~693     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~694     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~695     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~696     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~697     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~698     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~699     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~700     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~701     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~702     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~703     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~704     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~705     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~706     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~707     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~708     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~709     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~710     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~711     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~712     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~713     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~714     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~715     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~716     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~717     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~718     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~719     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~720     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~721     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~722     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~723     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~724     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~725     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~726     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~727     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~728     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~729     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~730     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~731     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~732     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~733     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~734     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~735     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~736     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~737     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~738     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~739     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~740     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~741     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~742     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~743     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~744     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~745     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~746     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~747     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~748     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~749     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~750     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~751     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~752     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~753     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~754     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~755     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~756     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~757     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~758     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~759     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~760     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~761     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~762     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~763     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~764     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~765     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~766     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~767     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~768     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~769     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~770     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~771     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~772     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~773     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~774     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~775     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~776     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~777     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~778     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~779     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~780     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~781     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~782     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~783     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~784     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~785     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~786     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~787     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~788     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~789     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~790     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~791     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~792     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~793     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~794     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~795     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~796     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~797     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~798     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~799     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~800     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~801     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~802     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~803     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~804     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~805     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~806     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~807     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~808     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~809     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~810     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~811     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~812     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~813     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~814     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~815     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~816     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~817     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~818     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~819     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~820     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~821     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~822     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~823     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~824     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~825     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~826     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~827     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~828     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~829     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~830     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~831     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~832     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~833     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~834     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~835     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~836     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~837     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~838     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~839     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~840     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~841     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~842     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~843     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~844     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~845     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~846     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~847     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~848     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~849     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~850     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~851     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~852     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~853     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~854     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~855     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~856     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~857     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~858     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~859     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~860     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~861     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~862     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~863     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~864     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~865     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~866     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~867     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~868     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~869     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~870     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~871     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~872     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~873     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~874     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~875     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~876     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~877     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~878     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~879     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~880     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~881     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~882     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~883     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~884     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~885     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~886     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~887     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~888     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~889     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~890     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~891     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~892     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~893     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~894     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~895     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~896     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~897     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~898     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~899     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~900     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~901     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~902     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~903     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~904     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~905     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~906     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~907     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~908     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~909     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~910     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~911     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~912     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~913     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~914     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~915     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~916     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~917     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~918     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~919     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~920     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~921     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~922     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~923     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~924     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~925     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~926     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~927     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~928     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~929     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~930     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~931     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~932     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~933     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~934     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~935     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~936     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~937     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~938     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~939     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~940     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~941     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~942     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~943     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~944     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~945     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~946     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~947     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~948     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~949     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~950     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~951     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~952     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~953     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~954     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~955     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~956     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~957     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~958     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~959     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~960     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~961     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~962     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~963     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~964     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~965     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~966     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~967     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~968     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~969     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~970     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~971     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~972     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~973     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~974     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~975     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~976     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~977     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~978     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~979     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~980     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~981     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~982     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~983     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~984     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~985     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~986     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~987     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~988     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~989     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~990     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~991     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~992     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~993     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~994     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~995     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~996     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~997     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~998     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~999     ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1000    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1001    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1002    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1003    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1004    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1005    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1006    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1007    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1008    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1009    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1010    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1011    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1012    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1013    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1014    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1015    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1016    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1017    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1018    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1019    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1020    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1021    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1022    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~1023    ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~32      ; Stuck at GND due to stuck port data_in ;
+; Register_Unit:REG_FILE|registers~63      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~62      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~61      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~60      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~59      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~58      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~57      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~56      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~55      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~54      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~53      ; Lost fanout                            ;
+; Register_Unit:REG_FILE|registers~52      ; Lost fanout                            ;
+; Total Number of Removed Registers = 1015 ;                                        ;
++------------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                          ;
++-------------------------------------+--------------------+---------------------------------------------------------------------------+
+; Register name                       ; Reason for Removal ; Registers Removed due to This Register                                    ;
++-------------------------------------+--------------------+---------------------------------------------------------------------------+
+; Register_Unit:REG_FILE|registers~63 ; Lost Fanouts       ; Register_Unit:REG_FILE|registers~62, Register_Unit:REG_FILE|registers~61, ;
+;                                     ;                    ; Register_Unit:REG_FILE|registers~60, Register_Unit:REG_FILE|registers~59, ;
+;                                     ;                    ; Register_Unit:REG_FILE|registers~58, Register_Unit:REG_FILE|registers~57, ;
+;                                     ;                    ; Register_Unit:REG_FILE|registers~56, Register_Unit:REG_FILE|registers~55, ;
+;                                     ;                    ; Register_Unit:REG_FILE|registers~54, Register_Unit:REG_FILE|registers~53, ;
+;                                     ;                    ; Register_Unit:REG_FILE|registers~52                                       ;
++-------------------------------------+--------------------+---------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 19    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2to1:ALU_SRC_MUX ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU_Module:ALU_UNIT"                                                                ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "Control_Unit:CONTROL"        ;
++------------+--------+----------+------------------------+
+; Port       ; Type   ; Severity ; Details                ;
++------------+--------+----------+------------------------+
+; branch     ; Output ; Info     ; Explicitly unconnected ;
+; mem_read   ; Output ; Info     ; Explicitly unconnected ;
+; mem_to_reg ; Output ; Info     ; Explicitly unconnected ;
+; mem_write  ; Output ; Info     ; Explicitly unconnected ;
++------------+--------+----------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Program_Counter:PC"                                                                                                                             ;
++-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                         ;
++-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; pc_in ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "pc_in[31..1]" will be connected to GND. ;
++-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 19                          ;
+;     plain             ; 19                          ;
+; arriav_lcell_comb     ; 58                          ;
+;     arith             ; 19                          ;
+;         1 data inputs ; 19                          ;
+;     normal            ; 39                          ;
+;         1 data inputs ; 5                           ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 28                          ;
+; boundary_port         ; 37                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.80                        ;
+; Average LUT depth     ; 3.77                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Fri Oct 17 16:25:36 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PC -c PC
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file alu_module.sv
+    Info (12023): Found entity 1: ALU_Module File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Module.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file program_counter.sv
+    Info (12023): Found entity 1: Program_Counter File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Program_Counter.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_unit.sv
+    Info (12023): Found entity 1: Register_Unit File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Register_Unit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_memory.sv
+    Info (12023): Found entity 1: Instruction_Memory File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file imm_generator.sv
+    Info (12023): Found entity 1: Imm_generator File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Imm_generator.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file branch_unit.sv
+    Info (12023): Found entity 1: Branch_Unit File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Branch_Unit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file riscv_cpu.sv
+    Info (12023): Found entity 1: Riscv_CPU File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hex7seg.sv
+    Info (12023): Found entity 1: hex7seg File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/hex7seg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.sv
+    Info (12023): Found entity 1: Control_Unit File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Control_Unit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file data_memory.sv
+    Info (12023): Found entity 1: Data_Memory File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Data_Memory.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2to1.sv
+    Info (12023): Found entity 1: mux2to1 File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/mux2to1.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu_control.sv
+    Info (12023): Found entity 1: ALU_Control File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Control.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_riscv_cpu.sv
+    Info (12023): Found entity 1: TB_Riscv_CPU File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/TB_Riscv_CPU.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Riscv_CPU.sv(49): created implicit net for "pc_next" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 49
+Info (12127): Elaborating entity "Riscv_CPU" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at Riscv_CPU.sv(49): truncated value with size 32 to match size of target (1) File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 49
+Info (12128): Elaborating entity "Program_Counter" for hierarchy "Program_Counter:PC" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 56
+Info (12128): Elaborating entity "Instruction_Memory" for hierarchy "Instruction_Memory:IMEM" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 61
+Warning (10850): Verilog HDL warning at Instruction_Memory.sv(9): number of words (5) in memory file does not match the number of elements in the address range [0:1023] File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv Line: 9
+Warning (10030): Net "mem.data_a" at Instruction_Memory.sv(5) has no driver or initial value, using a default initial value '0' File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv Line: 5
+Warning (10030): Net "mem.waddr_a" at Instruction_Memory.sv(5) has no driver or initial value, using a default initial value '0' File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv Line: 5
+Warning (10030): Net "mem.we_a" at Instruction_Memory.sv(5) has no driver or initial value, using a default initial value '0' File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv Line: 5
+Info (12128): Elaborating entity "Register_Unit" for hierarchy "Register_Unit:REG_FILE" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 74
+Info (12128): Elaborating entity "Imm_generator" for hierarchy "Imm_generator:IMM_GEN" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 79
+Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:CONTROL" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 92
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:ALU_SRC_MUX" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 102
+Info (12128): Elaborating entity "ALU_Control" for hierarchy "ALU_Control:ALU_CTRL" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 109
+Info (12128): Elaborating entity "ALU_Module" for hierarchy "ALU_Module:ALU_UNIT" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 117
+Info (12128): Elaborating entity "hex7seg" for hierarchy "hex7seg:result4" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 138
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "Register_Unit:REG_FILE|registers" is uninferred due to asynchronous read logic File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Register_Unit.sv Line: 11
+    Info (276007): RAM logic "Instruction_Memory:IMEM|mem" is uninferred due to asynchronous read logic File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv Line: 5
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/db/PC.ram0_Instruction_Memory_6c21a04c.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1004 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "rst" File: C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv Line: 3
+Info (21057): Implemented 109 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 35 output pins
+    Info (21061): Implemented 72 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Fri Oct 17 16:25:47 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:26
+
+

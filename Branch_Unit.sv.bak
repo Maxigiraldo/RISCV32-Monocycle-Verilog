@@ -1,0 +1,5 @@
+module Branch_Unit (
+	input rd1,
+	input rd2,
+	output rst
+);

@@ -1,0 +1,294 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/simulation/questa
+vALU_Control
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1760726257
+!i10b 1
+!s100 WI?04D_gf`dO2dEY9Zk]d1
+IRkGe^Zd]zeYJ<1>0Z;ISH3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 ALU_Control_sv_unit
+S1
+R0
+w1759534145
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Control.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Control.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1760726257.000000
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Control.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Control.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM
+Z8 tCvgOpt 0
+n@a@l@u_@control
+vALU_Module
+R1
+Z9 !s110 1760726255
+!i10b 1
+!s100 gMaLXoePL^MGN;@O_?WNj2
+ImkHZSEM3^fkA^Og<Vink]0
+R3
+!s105 ALU_Module_sv_unit
+S1
+R0
+w1760559259
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Module.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Module.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z10 !s108 1760726255.000000
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Module.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/ALU_Module.sv|
+!i113 1
+R6
+R7
+R8
+n@a@l@u_@module
+vControl_Unit
+R1
+R2
+!i10b 1
+!s100 Q3J0D_`bnDQ?CYOY06GP00
+I0Zn6A@S4^Y_XQ;2i?o3lJ3
+R3
+!s105 Control_Unit_sv_unit
+S1
+R0
+w1760564708
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Control_Unit.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Control_Unit.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z11 !s108 1760726256.000000
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Control_Unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Control_Unit.sv|
+!i113 1
+R6
+R7
+R8
+n@control_@unit
+vhex7seg
+R1
+Z12 !s110 1760726256
+!i10b 1
+!s100 _mED]z<FN_WeVTk9J4PCT1
+Ig^izfEQT0SYnQReT9XZR[2
+R3
+!s105 hex7seg_sv_unit
+S1
+R0
+w1759523508
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/hex7seg.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/hex7seg.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/hex7seg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/hex7seg.sv|
+!i113 1
+R6
+R7
+R8
+vImm_generator
+R1
+R12
+!i10b 1
+!s100 Y5HOhCJkdlVWIEG4SkQ<N2
+I]IZ1zAjX8YK=bn@MAOW392
+R3
+!s105 Imm_generator_sv_unit
+S1
+R0
+w1759533539
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Imm_generator.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Imm_generator.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Imm_generator.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Imm_generator.sv|
+!i113 1
+R6
+R7
+R8
+n@imm_generator
+vInstruction_Memory
+R1
+R2
+!i10b 1
+!s100 HSH^_8OmXVcCb?VLjYT^d0
+I4K?geb;EfS75g8>MmzRBo2
+R3
+!s105 Instruction_Memory_sv_unit
+S1
+R0
+w1760567090
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Instruction_Memory.sv|
+!i113 1
+R6
+R7
+R8
+n@instruction_@memory
+vmux2to1
+R1
+R2
+!i10b 1
+!s100 Q[A>YimfIVSFGRSSJDG?13
+I4I1k7EX]gAH2HleDeib9`3
+R3
+!s105 mux2to1_sv_unit
+S1
+R0
+w1759533851
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/mux2to1.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/mux2to1.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/mux2to1.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/mux2to1.sv|
+!i113 1
+R6
+R7
+R8
+vProgram_Counter
+R1
+R9
+!i10b 1
+!s100 nCMH[HezZgQ;:Fh`HaN^g2
+I9^BO7F6Z2Q8zZZG>j5GK;3
+R3
+!s105 Program_Counter_sv_unit
+S1
+R0
+w1760563739
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Program_Counter.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Program_Counter.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Program_Counter.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Program_Counter.sv|
+!i113 1
+R6
+R7
+R8
+n@program_@counter
+vRegister_Unit
+R1
+R9
+!i10b 1
+!s100 ]C_b]k=J[VIHONE4E=^Pm1
+I2TQOabDPT3KL05I1a`cOG2
+R3
+!s105 Register_Unit_sv_unit
+S1
+R0
+w1760565001
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Register_Unit.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Register_Unit.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Register_Unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Register_Unit.sv|
+!i113 1
+R6
+R7
+R8
+n@register_@unit
+vRiscv_CPU
+R1
+R12
+!i10b 1
+!s100 ODm`oXI[Fk8UC1ijNbm2H1
+I[Va`oO3zb]gFQ`Rd2^7d>0
+R3
+!s105 Riscv_CPU_sv_unit
+S1
+R0
+w1760643583
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/Riscv_CPU.sv|
+!i113 1
+R6
+R7
+R8
+n@riscv_@c@p@u
+vTB_Riscv_CPU
+R1
+!s110 1760726258
+!i10b 1
+!s100 a8HX@hQ8a]Fz84c<4aTbG0
+I=0h0CFcY3]o[U_4>2Y4Fz1
+R3
+!s105 TB_Riscv_CPU_sv_unit
+S1
+R0
+w1760646328
+8C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/TB_Riscv_CPU.sv
+FC:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/TB_Riscv_CPU.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1760726258.000000
+!s107 C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/TB_Riscv_CPU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM|C:/Users/maxim/Documents/U-6semestre/Arquitectura/PC_FPGA_SIM/TB_Riscv_CPU.sv|
+!i113 1
+R6
+R7
+R8
+n@t@b_@riscv_@c@p@u

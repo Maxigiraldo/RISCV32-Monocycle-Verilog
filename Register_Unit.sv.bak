@@ -1,0 +1,11 @@
+module Register_Unit (
+	input clk,
+	input rst,
+	input rst1_addr,
+	input rst2_addr,
+	input rd_addr,
+	input rd_data,
+	input reg_write,
+	output rs1_data,
+	output rs2_data
+);

@@ -1,0 +1,15 @@
+module PC (
+	input [31:0] pc_in,
+	input clk,
+	input rst,
+	ouput [31:0] pc_out
+);
+
+always @(posedge clk)
+	if (!rst)
+		pc = 0;
+	else
+		pc = pc + 4;
+	end
+
+endmodule

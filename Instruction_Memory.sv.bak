@@ -1,0 +1,4 @@
+module Instruction_Memory (
+	input add,
+	output instruction
+);
