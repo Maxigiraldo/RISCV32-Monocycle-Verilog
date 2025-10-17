@@ -1,10 +1,12 @@
 module TB_Riscv_CPU;
     reg clk, rst;
+	 wire [31:0] out_alu_result;
     wire [6:0] hex0, hex1, hex2, hex3, hex4;
     
     Riscv_CPU DUT (
         .clk(clk),
         .rst(rst),
+		  .out_alu_result(out_alu_result),
         .hex0(hex0),
         .hex1(hex1),
         .hex2(hex2),

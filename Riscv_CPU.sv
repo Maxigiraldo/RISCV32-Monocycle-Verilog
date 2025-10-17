@@ -1,6 +1,7 @@
 module Riscv_CPU (
     input clk,
     input rst,
+	 output [31:0] out_alu_result,
 	 output [6:0] hex0,
 	 output [6:0] hex1,
 	 output [6:0] hex2,
@@ -64,6 +65,7 @@ module Riscv_CPU (
     
    Register_Unit REG_FILE (
        .clk(clk),
+		 .rst(rst),
        .rs1(rs1),
        .rs2(rs2),
        .rd(rd),
@@ -120,6 +122,8 @@ module Riscv_CPU (
    // Por ahora, solo escribimos el resultado de la ALU
    assign write_back_data = alu_result;
 	
+	assign out_alu_result = alu_result;
+	
 	wire [3:0] hex_d0;
 	wire [3:0] hex_d1;
 	wire [3:0] hex_d2;
@@ -154,7 +158,7 @@ module Riscv_CPU (
 	);
 	
 	// ========== MONITOR PARA DEPURACIÓN ==========
-   always @(negedge clk) begin
+   always @(posedge clk) begin
        if (!rst) begin
            $display("======================");
            $display("Ciclo | PC    | Instr    | Operación");

@@ -13,7 +13,7 @@ module Data_Memory (
     assign read_data = mem_read ? mem[addr[11:2]] : 32'b0;
     
     // Escritura SÍNCRONA (con clock) - sincronizada con el pipeline
-    always @(negedge clk) begin
+    always @(posedge clk) begin
         if (mem_write)
             mem[addr[11:2]] <= write_data;
     end

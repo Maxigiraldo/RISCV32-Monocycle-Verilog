@@ -4,7 +4,7 @@ module Program_Counter (
    input wire [31:0] pc_in,
    output reg [31:0] pc_out
 );
-   always @(negedge clk or negedge rst) begin
+   always @(posedge clk or negedge rst) begin
        if (!rst)
            pc_out <= 32'b0;
        else
